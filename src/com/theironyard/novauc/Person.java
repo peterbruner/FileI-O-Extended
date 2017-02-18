@@ -5,12 +5,12 @@ package com.theironyard.novauc;
  */
 public class Person {
 
-    int id;
-    String first_name;
-    String last_name;
-    String email;
-    String country;
-    String ip_address;
+    private int id;
+    private String first_name;
+    private String last_name;
+    private String email;
+    private String country;
+    private String ip_address;
 
     Person(int id, String first_name, String last_name, String email, String country, String ip_address) {
         this.id = id;
@@ -20,6 +20,29 @@ public class Person {
         this.country = country;
         this.ip_address = ip_address;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s at %s from %s can be reached at %s\n ",this.first_name, this.last_name, this.ip_address,
+                this.country, this.email);
+    }
+
+    void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+    void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+    void setEmail(String email) {
+        this.email = email;
+    }
+    void setCountry(String country) {
+        this.country = country;
+    }
+    void setIp_address(String ip_address) {
+        this.ip_address = ip_address;
+    }
+
 
 
 }
