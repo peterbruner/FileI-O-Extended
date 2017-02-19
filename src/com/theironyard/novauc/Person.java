@@ -21,8 +21,6 @@ public class Person {
         this.ip_address = ip_address;
     }
 
-    public Person() {}
-
     @Override
     public String toString() {
         return String.format("%s %s at %s from %s can be reached at %s\n ",this.first_name, this.last_name, this.ip_address,

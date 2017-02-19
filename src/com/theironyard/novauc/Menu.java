@@ -8,25 +8,20 @@ import java.util.Scanner;
  */
 public class Menu {
 
-    Person crazyPerson = new Person();
-
     public void menu() throws IOException{
         Scanner input = new Scanner(System.in);
-        ReadWrite readenem = new ReadWrite();
+        ReadWrite rw = new ReadWrite();
         while (true) {
             System.out.println("What would you like to do? the entire project / print hashmap / write json / finish");
             switch (input.nextLine()) {
                 case "the entire project" :
-                    //System.out.println("withdraw shows here");
-                    readenem.theEntireProject();
+                    rw.theEntireProject();
                     break;
                 case "print hashmap" :
-                    //System.out.println("checkbalance shows here");
-                    System.out.println(readenem.switchBoard);
+                    System.out.println(rw.switchBoard);
                     break;
                 case "write json" :
-                    //System.out.println("removeAccount shows here");
-                    readenem.writing(crazyPerson);
+                    rw.writing();
                     break;
                 default:
                     return;
