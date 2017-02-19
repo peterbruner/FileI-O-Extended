@@ -1,6 +1,9 @@
 package com.theironyard.novauc;
 
+import jodd.json.JsonSerializer;
+
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,10 +41,22 @@ public class ReadWrite {
             //if the key doenst exist add a new arraylist and then put the object into the arraylist
             // , if the key does exist add to the arraylist
 
-            //ToDo: write an if, so that lines that don't start with an integer are not included, check forum project?
             //not going to work, the line has 0 for first line. make it >=1
         }
-        //System.out.println(switchBoard.keySet());
+    }
+
+    File phile = new File("people.json");
+
+    public void writing(Person crazyPerson) throws IOException {
+
+        JsonSerializer serializer = new JsonSerializer();
+
+        String jsonformattedPeople = serializer.serialize(crazyPerson);
+
+        FileWriter fw = new FileWriter(phile);
+
+        fw.write(jsonformattedPeople);
+        fw.close();
     }
 }
 
