@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class ReadWrite {
     File fille = new File("people.txt");
     Scanner fileScanner = new Scanner(fille);
-    HashMap<String, ArrayList<Person>> switchBoard = new HashMap();
+    public HashMap<String, ArrayList<Person>> switchBoard = new HashMap();
 
 
     public ReadWrite() throws IOException {
@@ -26,14 +26,13 @@ public class ReadWrite {
             String[] lineFormatted = line.split("\\,");
             Person persons = new Person(Integer.valueOf(lineFormatted[0]), lineFormatted[1], lineFormatted[2],
                     lineFormatted[3], lineFormatted[4], lineFormatted[5]);
-            System.out.printf("(%d), %s, %s, %s, %s, %s\n", persons.id, persons.first_name, persons.last_name,
-                    persons.email, persons.country, persons.ip_address);
-            if (switchBoard.containsKey(persons.country)) {
-                switchBoard.get(persons.country).add(persons);
-            }
-            else {
-                switchBoard.put(persons.country, new ArrayList<Person>());
-                switchBoard.get(persons.country).add(persons);
+//            System.out.printf("(%d), %s, %s, %s, %s, %s\n", persons.getId(), persons.getFirst_name(),
+//                    persons.getLast_name(), persons.getEmail(), persons.getCountry(), persons.getIp_address());
+            if (switchBoard.containsKey(persons.getCountry())) {
+                switchBoard.get(persons.getCountry()).add(persons);
+            } else {
+                switchBoard.put(persons.getCountry(), new ArrayList<Person>());
+                switchBoard.get(persons.getCountry()).add(persons);
             }
 
             //if the key doenst exist add a new arraylist and then put the object into the arraylist
@@ -42,5 +41,7 @@ public class ReadWrite {
             //ToDo: write an if, so that lines that don't start with an integer are not included, check forum project?
             //not going to work, the line has 0 for first line. make it >=1
         }
+        //System.out.println(switchBoard.keySet());
     }
 }
+

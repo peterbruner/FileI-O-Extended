@@ -27,22 +27,44 @@ public class Person {
                 this.country, this.email);
     }
 
-    void setFirst_name(String first_name) {
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
-    void setLast_name(String last_name) {
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
-    void setEmail(String email) {
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
-    void setCountry(String country) {
+    public String getEmail() { return email; }
+
+    public void setCountry(String country) {
         this.country = country;
     }
-    void setIp_address(String ip_address) {
-        this.ip_address = ip_address;
+    public String getCountry() {
+        return country;
     }
 
-
+    public void setIp_address(String ip_address) {
+        this.ip_address = ip_address;
+    }
+    public String getIp_address() {
+        return ip_address;
+    }
 
 }
